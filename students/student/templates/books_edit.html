@@ -1,0 +1,31 @@
+<html>
+{% load static %}
+{% block title %}  Edit Book {% endblock %}
+<body>
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <img style="width:60px; height:50px;" src="{{book.get_image_url}}">
+
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name='name' value="{{book.name}}"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image" value="{{book.get_image_url}}" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Details</label>
+            <input type="text" name="details" value="{{book.details}}" class="form-control" aria-describedby="emailHelp">
+        </div>         
+        <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+   
+    {% endblock %}
+</div>
+<script src="{% static 'js/bootstrap.js'%}"> </script>
+</body>
+</html>

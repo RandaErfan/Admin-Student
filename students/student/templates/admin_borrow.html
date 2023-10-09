@@ -1,0 +1,31 @@
+{%extends 'layout/home_admin.html'%}
+<html lang="en">
+{% load static %}
+<head>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title%} All Borrowed Books {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div style="display: inline-block; text-align: center;">
+    {%for bor in borrows %}
+    <div style="display: inline-block;">
+    <div class="card" style="width: 380px; height:350px; margin: 20px; padding:10px;">
+  <div class="card-body" style="margin-top: 20px">
+    <h5 class="card-title"><font style="color:plum;"><b> Borrowed by Student: </b></font style="color:black;"><font>{{bor.student_id}}</font></h5>
+    <h5 class="card-title"><font style="color:plum;"><b>Book Borrowed: </b></font><font style="color:black;">{{bor.book}}</font></h5>
+    <h5 class="card-title"><font style="color:plum;"><b>Time of Borrow: </b></font><font style="color:black;">{{bor.borrow_date}}</font></h5>
+    <h5 class="card-title"><font style="color:plum;"><b>Time of Return: </b></font><font style="color:black;">{{bor.return_date}}</font></h5>
+
+     </div>
+    <a href="{% url 'borrow.delete' bor.id %}" class="btn btn-outline-danger">delete</a>
+</div>
+</div>
+{%endfor%}
+</div>
+{%endblock%}
+   <script src="{% static ' student/js/bootstrap.js' %}"> </script>
+
+</body>
+</html>

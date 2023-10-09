@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+<head>
+<title>  Registration </title>
+</head>
+<body>
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <h1> Register Now  </h1>
+
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name='name'  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="text" name="age" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" name="email"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input type="text" name="phone" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">School</label>
+            <input type="text" name="school"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="text" name="password"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Confrim Password</label>
+            <input type="text" name="password2"  class="form-control" aria-describedby="emailHelp">
+        </div>
+          
+        <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+        <a href="{% url 'students.login'%}" >Do you have an account? login now </a>
+</div>
+<script src="{% static 'js/bootstrap.js'%}"> </script>
+</body>
+</html>

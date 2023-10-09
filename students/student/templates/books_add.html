@@ -1,0 +1,31 @@
+<html>
+{% load static %}
+<title>Add New Book</title>
+<body>
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <h1>Add New Book</h1>
+
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Details</label>
+            <input type="text" name="details"  class="form-control" aria-describedby="emailHelp">
+        </div>         
+        <button type="submit" class="btn btn-primary">add</button>
+        </form>
+   
+    {% endblock %}
+</div>
+<script src="{% static 'js/bootstrap.js'%}"> </script>
+</body>
+</html>

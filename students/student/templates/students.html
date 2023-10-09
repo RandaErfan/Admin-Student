@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+	 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>students Page</title>
+</head>
+<body style="background-image: url(../../static/images/sch.PNG); background-repeat:repeat-x; background-attachment:fixed">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Students Page</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{% url 'students.register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{% url 'students.login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home Page</a>
+          </li>
+      </ul>
+  </div>
+</div>
+</nav>
+  <h1 style="color:greenyellow;">Welcome to Library</h1>
+  <div style="color:white; padding:10px;">
+	<p>You can now register ,after login you can see your profile ,</p>
+	 <p>update it and finally you can borrow books and</p>
+	  <p>date return after 7 days from the date you borrow  </p>
+</div >
+<div style="color:white; margin-bottom: 10px; padding:10px;">
+
+  <p>join us now ^^</p>
+<font style="width:100px; height:50px;"><a href="{% url 'students.register' %}" class="btn btn-primary">Register</a></font>
+</div>
+<div style="color:white; padding:10px;">
+  <p>Do you have already an account? </p>
+<font style="width:100px; height:50px;"><a href="{% url 'students.login' %}" class="btn btn-primary">Login</a></font>
+</div>
+	<script src="{% static 'students/js/script.js'%}"> </script>
+</body>
+</html>

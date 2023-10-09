@@ -1,0 +1,26 @@
+{%load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>{% block title%} Login{% endblock %}</title>
+</head>
+<body style="align-self: center;">
+
+<div  class="bg-light" style="align:center; width:1000px; height:400px; background-color:white; padding:30px; margin:20px;" >
+<form method="post" style="align:center;" >
+      {% csrf_token %}
+  <div class="form-outline mb-4">
+      <label for="username">Username</label>
+    <input type="text" name="username" id="username" autocomplete="username email" class="form-control" />
+  </div>
+  <div class="form-outline mb-4">
+      <label for="password">Password</label>
+    <input type="password" name="password" id="password" autocomplete="new-password" class="form-control" />
+  </div>
+  <p><font style="text-align: center;"><button type="submit" class="btn btn-primary">Sign In</button></font></p>
+</form>
+</div>
+
+  <script src="{% static 'js/bootstrap.js' %}"> </script>
+</body>
+</html>

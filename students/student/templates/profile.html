@@ -1,0 +1,29 @@
+{% extends 'layout/base.html'%}
+<html>
+{%load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <h1>Student Info </h1>
+</head>
+<body>
+  {% block content %}
+<div style="display: inline-block; background-color:white;">
+    <div  style="width: 400px; height:800px; margin: 30px; padding:40px;">
+       <img src={{student.get_image_url}} width="130" height="180">
+      <h3>Student Info</h3>
+      <p class="card-text"><b>Name: </b>{{student.name}}</p>
+      <p class="card-text"><b>Age: </b>{{student.age}}</p>
+      <p class="card-text"><b>Image: </b>{{student.get_image_url}}</p>
+      <p class="card-text"><b>Email: </b>{{student.email}}</p>
+      <p class="card-text"><b>Phone Number: </b>{{student.phone}}</p>
+      <p class="card-text"><b>School: </b>{{student.school}}</p>
+      <p class="card-text"><b>Borrowed book: </b>{{student.book}}</p>
+      <p> 
+    <a href="{% url 'students.update' student.id %}" class="btn btn-primary">Update Profile</a>
+    </p> 
+</div>
+</div>
+{% endblock %}
+<script src="{% static 'students/js/script.js'%}"> </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'layout/base.html'  %}
+{% load static %}
+{% block title %}  Update Profile {% endblock %}
+<body>
+{% block content %}
+<script src="{% static 'js/bootstrap.js'%}"> </script>
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <img style="width:60px; height:50px;" src="{{student.get_image_url}}">
+
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name='name' value="{{student.name}}"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" name='email' value="{{student.email}}"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" name='phone' value="{{student.phone}}"  class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">School</label>
+            <input type="text" name='school' value="{{student.school}}"  class="form-control" aria-describedby="emailHelp">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image" value="{{student.get_image_url}}" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="text" name="age" value="{{student.age}}" class="form-control" aria-describedby="emailHelp">
+        </div>         
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+   
+    {% endblock %}
+</div>
+</body>

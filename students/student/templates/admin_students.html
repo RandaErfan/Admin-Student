@@ -1,0 +1,35 @@
+{%extends 'layout/home_admin.html'%}
+<html lang="en">
+{% load static %}
+<head>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title%} All Students {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div style="display: inline-block; ">
+    <div style="display: inline-block; ">
+    <div>
+    <a href="{% url 'student.add' %}"><button style="width:300px;height:80px; margin:10px;" class="btn btn-primary">Add New Student</button></a>
+</div>
+    {%for std in students %}
+    <div style="display: inline-block;">
+    <div class="card" style="width: 305px; height:350px; margin: 30px;">
+  <img class="card-img-top" style="padding: 20px;" height="200px" src={{std.get_image_url}} alt="Card image cap" width="100" height="150">
+  <div class="card-body" style="padding:10px;">
+    <h5 class="card-title"><font style="color:black;"><b>{{std.name}}</b></font></h5>
+    <a href="{% url 'student.show' std.id %}" class="btn btn-outline-success">show</a>
+    <a href="{% url 'student.password' std.id %}" class="btn btn-outline-dark">change password </a>
+    <a href="{% url 'student.delete' std.id %}" class="btn btn-outline-danger">delete</a>
+
+  </div>
+</div>
+</div>
+{%endfor%}
+</div>
+{%endblock%}
+   <script src="{% static ' student/js/bootstrap.js' %}"> </script>
+
+</body>
+</html>

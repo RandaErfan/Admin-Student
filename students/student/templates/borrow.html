@@ -1,0 +1,35 @@
+{% extends 'layout/index.html' %}
+{% load static %}
+<head>
+    
+    <title>{% block title %} borrow {% endblock %}</title>
+</head>
+<body>
+{% block content%}
+<div class="bg-light" style="background-color:white; padding:40px;" >
+    <h1> Borrow a Book  </h1>
+      <img src={{book1.get_image_url}} width="130" height="150">
+<form method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label class="form-label" for="book"><b>Are you sure to borrow the book?</b></label>
+    <input type="text" name='book' value="{{book1.name}}" class="form-control" aria-describedby="emailHelp">
+    </div>
+        <div class="mb-3">
+    <label class="form-label" for="student"><b>The Student:</b></label>
+    <input type="text" name='student' value="{{user.username}}" class="form-control" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3" >
+    <p><b>The Date of Beturn: </b>{{date_borrow}}</p>
+    </div>
+    <div class="mb-3">
+    <p><b>The Date of Return: </b>{{date_return}}</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Yes</button>
+    <a href="{% url 'students.books' %}" class="btn btn-primary">No</a>
+
+</form>
+</div>
+{% endblock %}
+
+</body>

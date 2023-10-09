@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>{% block title %} Students Page {% endblock %}</title>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body style="background-image: url(../../static/images/school.PNG); background-repeat:repeat-x; background-attachment:fixed; margin:0; padding: 0;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Students Page</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{%url 'students.books' %}">All Books</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{%url 'students.profile' student.id %}">Profile</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{%url 'students.update' student.id %}">Update Profile</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'students.logout' %}">Logout</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="#">User Student : {{user.username}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container"  >
+    <div class=" div1" >
+   {% block content %}
+
+    {% endblock %}
+    </div>
+       <div >
+   {% block body %}
+
+    {% endblock %}
+    </div>
+</div>
+
+
+   <script src="{% static 'js/bootstrap.js' %}"> </script>
+
+</body>
+</html>

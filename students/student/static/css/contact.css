@@ -1,0 +1,98 @@
+		body{
+			background-image: url(../../static/images/1.jpg);
+			background-repeat: repeat-x;
+			background-attachment: fixed;
+			margin: 0;
+			padding: 0;
+		}
+		.div1{
+			
+			color:white;
+			width: 900px;
+			height: 480px;
+			padding: 5px;
+			font: cursive  bold 50px;
+			margin: 150px 0px 10px 400px ;
+			font-style: bolder;
+			
+		}
+		.home{
+			margin-right: 800px;
+		}
+		table{
+			border-radius: 10%;
+		}
+		h3{
+			font-family: fantasy;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			color: black;
+			font-size: 20px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+
+		}
+		li{
+			margin: 5px;
+			padding-right: 60px;
+			list-style: none;
+			display: inline-block;
+		}
+	    .li{
+	    list-style-position: inside;
+		text-align:right;
+		padding-left: 30px;
+		padding-right: 30px;
+		font-size: 19px;
+		font-family: Toggle;
+	    }
+		li:hover{
+			cursor:pointer;
+			
+			font-color:green ;
+		}
+		img{
+		width: 35px;
+		height: 25px;
+		padding: 0;
+		margin: 0;
+	    }
+	    .div2 ,.div3, .div4{
+	    	width: 200px;
+	    	height: 180px;
+	    	padding: 5px;
+	    	background-color: #CAC3D6;
+	    	padding: 0 5px 0 5px ;
+	    	text-align: center;
+	    }
+	    .div2{
+	    	margin: 20px 200px 15px 50px ;
+
+	    }
+	    .div3{
+	    	margin: 10px 100px 15px 100px
+
+	    }
+	    .div4{
+	    	margin: 10px 50px 15px 200px
+
+	    }
+	    h4{
+	    	font-size: 24px;
+	    	color: #FFC300;
+	    	font-family: inherit;
+	    	text-align: center;
+	    }
+	   	a{
+	    	color: black;
+	    }
+	    a:link{
+	    	text-decoration: none;
+	    }
+	    a:hover{
+	    	color: wheat;
+	    }
+

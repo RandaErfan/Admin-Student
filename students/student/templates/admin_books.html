@@ -1,0 +1,35 @@
+{%extends 'layout/home_admin.html'%}
+<html lang="en">
+{% load static %}
+<head>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title%} All Books {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div style="display: inline-block;">
+    <div>
+    <a href="{% url 'books.add' %}"><button style="width:200px;height:70px; margin:10px;" class="btn btn-primary">Add New Book</button></a>
+</div>
+    {%for book in books %}
+    <div style="display: inline-block;">
+    <div class="card" style="width: 305px; height:350px; margin: 30px;">
+  <img class="card-img-top" style="padding: 20px;" height="200px" src={{book.get_image_url}} alt="Card image cap" width="100" height="150">
+  <div class="card-body" style="margin-top: 20px">
+    <h5 class="card-title"><font style="color:black;"><b>{{book.name}}</b></font></h5>
+    <a href="{% url 'books.show' book.id %}" class="btn btn-outline-success">show</a>
+    <a href="{% url 'books.edit' book.id %}" class="btn btn-outline-dark">edit</a>
+    <a href="{% url 'books.delete' book.id %}" class="btn btn-outline-danger">delete</a>
+
+
+  </div>
+</div>
+</div>
+{%endfor%}
+</div>
+{%endblock%}
+   <script src="{% static ' student/js/bootstrap.js' %}"> </script>
+
+</body>
+</html>
